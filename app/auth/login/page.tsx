@@ -1,27 +1,21 @@
-
 "use client";
+
 import { useState } from "react";
-
 import { account } from "@/lib/appwrite";
-
 
 export default function LoginPage() {
 
-     const [name, setName] = useState("");
+  const [name, setName] = useState("");
   const [college, setCollege] = useState("");
   const [course, setCourse] = useState("");
   const [foodPreference, setFoodPreference] = useState("");
   const [roomType, setRoomType] = useState("");
   const isFormValid = name && college && course;
 
-
-
-
   const handleGoogleLogin = () => {
         if (!isFormValid){
-alert("please fill the mandatory detzils first");
-
-             return;
+          alert("please fill the mandatory details first");
+          return;
         };
 
          // Save form data to localStorage temporarily
@@ -29,10 +23,8 @@ alert("please fill the mandatory detzils first");
       name,
       college,
       course,
-      
-        foodPreference,
-        roomType,
-      
+      foodPreference,
+      roomType,
     };
     localStorage.setItem("user_student", JSON.stringify(formData));
 
@@ -96,7 +88,6 @@ alert("please fill the mandatory detzils first");
             <option value="">Select Room Type</option>
             <option value="single">Single</option>
             <option value="double">Double</option>
-            <option value="triple">Triple</option>
           </select>
 
           <button
@@ -115,11 +106,3 @@ alert("please fill the mandatory detzils first");
     </div>
   );
 }
-
-
-
-
-
-
-
-
